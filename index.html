@@ -142,7 +142,7 @@
                 <sup style="color:#ff2b67;">*</sup>,
               </span>
               <span class="author-block">
-                <a href="">Dongping Chen</a>
+                <a href="https://dongping-chen.github.io/">Dongping Chen</a>
                 <sup style="color:#ec8bfd;">1</sup>
                 <sup style="color:#2bff32;">2</sup>
                 <sup style="color:#c9892e;">‡</sup>,
@@ -152,24 +152,24 @@
                 <sup style="color:#ec8bfd;">1</sup>,
               </span>
               <span class="author-block">
-                <a href="">Benlin Liu</a>
+                <a href="https://liubl1217.github.io/">Benlin Liu</a>
                 <sup style="color:#2bff32;">2</sup>,
               </span>
               <span class="author-block">
-                <a href="">Yao Wan</a>
+                <a href="http://wanyao.me/">Yao Wan</a>
                 <sup style="color:#ec8bfd;">1</sup>
                 <sup style="color:#c9892e;">†</sup>,
               </span>
               <span class="author-block">
-                <a href="">Zhou Zhao</a>
+                <a href="https://person.zju.edu.cn/zhaozhou">Zhou Zhao</a>
                 <sup style="color:#fabb55;">3</sup>,
               </span>
               <span class="author-block">
-                <a href="">Philips S. Yu</a>
+                <a href="https://cs.uic.edu/profiles/philip-yu/">Philips S. Yu</a>
                 <sup style="color:#66f1fb;">4</sup>,
               </span>
               <span class="author-block">
-                <a href="">Ranjay Krishna</a>
+                <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a>
                 <sup style="color:#2bff32;">2</sup>
               </span>
             </div>
@@ -240,7 +240,7 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href=""
+                  <a href="https://huggingface.co/datasets/shuaishuaicdp/LiveVQA/tree/main"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -350,7 +350,6 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Environment Infrastructure. -->
       <h2 class="title is-3">LIVEVQA Dataset Construction</h2>
       <div class="content has-text-justified">
         <img src="img/builder.png" width="100%" alt="environment infrastructure" class="responsive-image">
@@ -360,11 +359,22 @@
           <ol>
             <li><b>Raw Data Collection from Diverse Sources</b>: This stage involves collecting recent visual and textual data. For news articles, this includes URL and headline filtering, image selection based on size and relevance (enhanced using GPT-4.1 to ensure strong correlation with events), and semantic deduplication. For videos (from YouTube), it involves preprocessing (restricting to English, max 10 mins, with subtitles), subtitle-based segmentation using an LLM, initial keyframe identification (using UVD and perceptual hashing for deduplication), and LLM-driven selection of top-K relevant keyframes. For academic papers (from arXiv), it includes extracting titles, abstracts, authors, images, and captions, followed by key image selection prioritizing architectural diagrams and key findings, avoiding common visualizations.</li>
             <li><b>Visual Question Answering (VQA) Generation and Filtering</b>: This stage constructs two levels of questions. Level 1 questions target basic visual entity recognition (e.g., locations, persons, time) based on filtered images and metadata, with GPT-4.1 used to filter out unqualified QAs (e.g., those with overly brief answers or simple labels). Level 2 questions are more complex, requiring multi-hop cross-modal reasoning using the full image context and related textual information, covering seven types (location, person, organization, time, event, count, reason); these are also generated and filtered by GPT-4.1 to ensure answer verifiability. All LLM/MLLM-assisted processes undergo human validation with a high pass rate.</li>
-        </ol>
-      </md-block>
+          </ol>
+        </md-block>
+
+        <div style="margin-top: 30px; text-align: center;">
+          <h3 class="title is-4">Data Filtering</h3>
+          <img src="img/filter.png" width="100%" alt="LIVEVQA Filtering Process" class="responsive-image" style="max-width: 800px; margin-bottom: 10px; border: 1px solid #ddd;">
+          <md-block>
+            <p style="font-size: 0.9em; color: #363636; text-align: justify;">
+            The diagram above illustrates the comprehensive filtering process employed in the construction of the LIVEVQA dataset. It details how raw images and synthesized question-answer pairs are systematically refined across three distinct data source pipelines: YouTube videos, arXiv academic papers, and news articles (from sources such as Forbes, Variety, CNN, BBC, and Associated Press).
+            The pipeline begins with a large corpus of "Raw Images" (e.g., 829K from YouTube, 180K from arXiv, 19K from News). These are then subjected to a series of stringent filtering stages. Key steps include "Key Frame Filters" for video content, "Irrelevant Image Filters" to remove non-pertinent visuals, and "Choose the Most Representative" to select the most informative images. Further refinement occurs through "Level-1 QAs Filters" and "Level-2 QAs Filters", followed by an "AI Judge & Filter QAs" step. This meticulous process significantly reduces the volume of data, ensuring that only high-quality and relevant "Meta Images" and their associated reasoning questions (e.g., culminating in 12K images from YouTube, 9K from arXiv, and 8K from News) are included in the final LIVEVQA dataset. This multi-layered filtering strategy is essential for maintaining the integrity and utility of the benchmark.
+            </p>
+          </md-block>
+        </div>
+
       </div>
-      <!--/ Environment Infrastructure. -->
-    </div>
+      </div>
   </section>
 
   <section class="section">
@@ -473,9 +483,9 @@
               <div class="infoBody">
                 <div class="tabs is-centered example_lst">
                   <ul>
-                    <li class="is-active"><a title="Overall Accuracy">Overall Accuracy (Table 2)</a></li>
-                    <li><a title="News Subset Details">News Subset - Detailed Categories (Table 3)</a></li>
-                    <li><a title="Video Subset Details">Video Subset - Detailed Categories (Table 7)</a></li>
+                    <li class="is-active"><a title="Overall Accuracy">Overall Accuracy</a></li>
+                    <li><a title="News Subset Details">News Subset - Detailed Categories</a></li>
+                    <li><a title="Video Subset Details">Video Subset - Detailed Categories</a></li>
                   </ul>
                 </div>
                 <script type="text/javascript">
@@ -654,153 +664,69 @@
   <section class="section" id="Empirical Result">
     <div class="container is-max-desktop">
       <div class="featurecard-container">
-        <!-- Trustworthiness and Utility -->
-        <h1 class="title">Empirical Results</h1>
+        <h1 class="title">Empirical Results from LIVEVQA</h1>
+
         <div class="feature_1x1">
           <div class="featurecard">
-            <h2>Commercial ImageLLMs outperform Open-source VideoLLMs in Zero-shot Settings</h2>
+            <h2>MLLMs Face Challenges with "Live" Visual Knowledge; Multimodal Search is Key</h2>
           </div>
           <div class="description">
             <p>
-            <ol>
-              <li><b>Commercial ImageLLMs, notably GPT-4V and GPT-4o, consistently outperform open-source
-                  VideoLLMs in zero-shot settings.
-                  GPT-4o exhibits superior performance across all GUI scenarios in complex tasks, reflected in its
-                  high scores in both multiple-choice and free-form queries, with an average of 84.8% and 3.573.
-                  Similarly, Gemini demonstrates strong capabilities in captioning and descriptive tasks within
-                  software and iOS environments, scoring 2.836 and 2.936, respectively.
-                  Further analysis reveals that GPT-4V excels in applications with minimal textual content and
-                  simple layouts, such as TikTok, health apps, and GitHub.
-                  In contrast, its performance drops in more intricate applications like Microsoft ToDo and XR
-                  software.
-                  As for VideoLLMs, their significantly poorer performance is attributed to two main factors:
-                  their inability to accurately interpret GUI content from user inputs and a lack of sufficient
-                  GUI-oriented pretraining, which is evident from their inadequate performance in basic captioning
-                  and description tasks.</li>
-            </ol>
+              Our comprehensive benchmarking of 17 state-of-the-art Multimodal Large Language Models (MLLMs) on the LIVEVQA dataset revealed significant difficulties in handling visual information beyond their knowledge cutoff dates. For instance, even top-performing models showed low accuracy on recent visual content when operating without external tools.
+            </p>
+            <p>
+              However, the integration of multimodal search capabilities leads to dramatic improvements.
+              <ol>
+                <li>Models augmented with multimodal search tools (e.g., GPT-4.1 with MM-Search) demonstrated an average accuracy increase of 327% in seeking live visual knowledge. Specifically, GPT-4.1's average accuracy more than doubled from 16.5% to 33.4% when using MM-Search, with particularly striking gains on challenging Level 2 questions (e.g., accuracy on News subset Level 2 rose from 5.2% to 27.2%).</li>
+                <li>Native image search capabilities, as seen in models like GPT-03, also provided substantial gains (e.g., from 3.0% to 15.8% on Level 2 questions). In contrast, simple text-based online searching did not yield significant improvements, underscoring the necessity of multimodal retrieval for dynamic visual information.</li>
+              </ol>
             </p>
           </div>
         </div>
 
-        <!-- Alignment of LLMs -->
         <div class="feature_1x1">
           <div class="featurecard">
-            <h2>Performance Variate in Different GUI Scenarios</h2>
+            <h2>Efficiently Updating MLLMs with New Visual Knowledge via PEFT</h2>
           </div>
           <div class="description">
             <p>
-              GPT-4V and Gemini excel in common scenarios such as mobile and website interfaces but show marked
-              deficiencies in more complex GUI environments like XR and multi-window interactions, across both
-              captioning and intricate tasks.
-              This performance gap highlights a significant shortfall in understanding environments where GUI
-              elements are scattered and demand sophisticated interpretation.
-              It emphasizes the critical need for specialized benchmarks and datasets tailored to these complex
-              GUI scenarios, which is essential for enhancing the GUI-oriented capabilities of MLLMs, paving the
-              way for them to become truly reliable and high-performing general control agents.
+              The research explored updating MLLMs with new visual knowledge using Parameter-Efficient Fine-Tuning (PEFT) methods like LoRA and DoRA.
+              <ol>
+                <li><b>Rapid Adaptation:</b> Visual information can be efficiently updated through fine-tuning within only one epoch. Models using direct multiple-choice questions with concise answers (MCQA format) yielded faster and more effective learning during the visual knowledge acquisition phase compared to other formats like QA (Question + Ground Truth) or QAR (Question + Ground Truth + Reasoning).</li>
+                <li><b>LoRA Rank Impact:</b> Higher rank LoRA configurations consistently enhanced visual knowledge capabilities, particularly in assimilating recent visual entities. Models with higher ranks outperformed lower-rank counterparts by an average of 5.4% on the validation subset.</li>
+                <li><b>Benefit to General Reasoning:</b> Training on the visually knowledge-intensive LIVEVQA dataset—particularly with straightforward answers and multiple-choice questions—led to a notable 4.2% improvement on the general multimodal reasoning benchmark MMMU.</li>
+              </ol>
             </p>
           </div>
         </div>
 
-        <!-- Performance Gap in Trustworthiness -->
         <div class="feature_1x1">
           <div class="featurecard">
-            <h2>Keyframe Selection is Important for GUI-oriented Tasks</h2>
+            <h2>Knowledge Updating Presents Trade-offs: Enhanced Reasoning vs. Degraded Perception</h2>
           </div>
           <div class="description">
             <p>
-              Across both basic tasks such as captioning and more complex tasks like prediction and reasoning,
-              significant variations are evident among keyframe selection methods.
-              GPT-4V and Gemini significantly benefit from using random-selected and human-selected keyframes,
-              scoring approximately 0.2-0.3 points higher in both captioning and free-form tasks than those using
-              programmatic extraction.
-              This suggests that traditional keyframe technologies, designed for natural videos, are less
-              effective for detecting essential GUI operations, particularly when subtle movements like mouse
-              clicks and dynamic changes are involved.
-              Conversely, the difference in performance is relatively smaller in Qwen-VL-Max, indicating that
-              while keyframe selection methods are crucial for models proficient in GUI content, they exert less
-              influence on less capable models.
+              While PEFT methods allow for efficient incorporation of new visual facts, this process is not without its challenges and trade-offs.
+            </p>
+            <p>
+              A consistent observation was the degradation in the model's foundational visual perception capabilities (as measured by the MMStar benchmark) after undergoing intensive visual knowledge updates, regardless of rank, training steps, or data formats. For example, models trained using the simple QA format exhibited a performance drop on MMStar from 65.80% to 58.16%. This suggests an inherent conflict between enhancing specific visual knowledge through intensive updates and preserving the model's broader visual perception abilities.
             </p>
           </div>
         </div>
 
-
-        <!-- Transparency in Trustworthiness -->
         <div class="feature_1x1">
-
           <div class="featurecard">
-            <h2>Dynamic GUI Tasks Continue to Challenge MLLMs</h2>
+            <h2>Model Scale Correlates with Performance, but Calibration Remains a Challenge</h2>
           </div>
           <div class="description">
             <p>
-              In the fine-grained tasks, GPT-4V and GPT-4o excel with static GUI content and prediction tasks over
-              image sequences but struggle with providing detailed descriptions for entire videos and dynamic GUI
-              content.
-              This discrepancy is attributed to minor variations in GUI that significantly impact descriptions.
-              Enhancing the number of keyframes and the granularity of perception might mitigate these issues.
-              Among VideoLLMs, ChatUnivi excels in conversational tasks by effectively leveraging contextual
-              nuances, particularly in subsequent rounds, yet it underperforms in GUI-oriented captioning tasks.
-              In contrast, GUI-Vid demonstrates proficiency in sequential tasks but falls short in both captioning
-              and static content handling.
-              This gap is linked to deficiencies in GUI-Vid’s pretraining, which lacked comprehensive GUI content
-              crucial for effective vision-text alignment, as evidenced by its poor performance and an instruction
-              tuning process also failed to fully address these shortcomings.</p>
-
-          </div>
-        </div>
-        <div class="feature_1x1">
-
-          <div class="featurecard">
-            <h2>Vision Perception is Important for Sequential GUI Tasks</h2>
-          </div>
-          <div class="description">
-            <p>
-              Integrating detailed textual information slightly outperforms purely vision-based inputs or detailed
-              captions, akin to a Chain of Thought (CoT) setting.
-              Surprisingly, GPT-4V excels in caption and prediction tasks with just detailed captions, providing
-              insights on enhancing specific GUI-oriented tasks through additional textual information.
-              However, it still falls short in more challenging tasks, such as retrieving static or dynamic
-              content. This underscores the critical role of visual perception in GUI environments, where even
-              minor changes can significantly impact outcomes.</p>
-
-          </div>
-        </div>
-        <div class="feature_1x1">
-
-          <div class="featurecard">
-            <h2>Supreme Enhancement of GUI-Vid on Graphic-based Interface After Finetuned on GUI-World</h2>
-          </div>
-          <div class="description">
-            <p>
-              As a pioneering study in training VideoLLMs as screen agents, GUI-Vid significantly outperforms the
-              baseline model, showing an average improvement of 30% across various tasks and GUI scenarios, even
-              surpassing the commercial ImageLLM, Qwen-VL-Max.
-              This enhancement is particularly notable in captioning and prediction over image sequences, where
-              GUI-Vid matches the performance of GPT-4V and Gemini-Pro. Our two-stage progressive fintuning
-              significantly enhances the performance in all GUI scenarios.
-              Remarkably, GUI-Vid scored 3.747 in caption tasks within the XR scenario, highlighting its potential
-              in XR applications and the high-quality annotations provided by our dataset.
-              However, in Multiple-Choice QA and Chatbot tasks, GUI-Vid still lags behind industry leaders like
-              GPT-4V and Gemini-Pro, a discrepancy likely due to the baseline LLM’s weaker performance and the
-              challenges of instruction-based fine-tuning.</p>
-
-          </div>
-        </div>
-        <div class="feature_1x1">
-
-          <div class="featurecard">
-            <h2>Upper Bound of GUI-oriented Capability with More Keyframes and High Resolution</h2>
-          </div>
-          <div class="description">
-            <p>
-              Our two ablation studies during the fine-tuning phase demonstrate that utilizing GUI image-text
-              captioning data significantly enhances the model's preliminary understanding of GUI elements,
-              outperforming training that relies solely on videos.
-              Additionally, an increased number of keyframes correlates with improved performance across various
-              scenarios, notably in environments featuring multiple windows and software applications.
-              Further evidence reveals that higher image resolutions substantially boost task performance, both
-              basic and complex, for GPT-4o.
-              These findings underscore the potential for further developing a more robust GUI Agent.</p>
-
+              The benchmark results highlighted several aspects regarding model characteristics:
+              <ol>
+                <li><b>Larger Models Tend to Perform Better:</b> For models sharing the same knowledge cutoff (e.g., the GPT-4.1 family), increased model size generally correlated with improved accuracy on LIVEVQA tasks across all difficulty levels. Proprietary models also typically maintained an advantage over open-source counterparts.</li>
+                <li><b>Overconfidence and Calibration Issues:</b> A crucial finding was the positive correlation between stated confidence and accuracy across models, but with significant calibration issues. All evaluated MLLMs demonstrated a consistent pattern of overconfidence in their visual factuality assessments, with their performance falling significantly below the ideal calibration line. While larger models like GPT-4.1 showed comparatively better calibration than their smaller variants, substantial opportunities remain for improving MLLM calibration when encountering unknown visual knowledge.</li>
+                <li><b>Level 2 Questions Prove More Difficult:</b> As anticipated, Level 2 questions, which require deeper cross-modal reasoning, generally resulted in significantly lower performance for models compared to Level 1 (visual entity recognition) questions across most data subsets (News, Video).</li>
+              </ol>
+            </p>
           </div>
         </div>
       </div>
@@ -808,7 +734,7 @@
   </section>
 
 
-  <section class="section" id="Acknoledgement">
+  <!-- <section class="section" id="Acknoledgement">
     <div class="container is-max-desktop content">
       <h1 class="supportTitle">Acknowledgement</h1>
       <md-block>
@@ -820,8 +746,9 @@
         [OSWorld](https://os-world.github.io/).
       </md-block>
     </div>
-  </section>
-  <section class="section" id="BibTeX">
+  </section> -->
+
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h1 class="title">BibTeX</h1>
       <pre><code>@misc{chen2024guiworld,
@@ -831,18 +758,20 @@
         eprint={2406.10819},
   }</code></pre>
     </div>
-  </section>
+  </section> -->
+
+
   <div class="content">
     <div id="supportContainer">
-      <h1 class="supportTitle">GUI-World Team</h1>
+      <h1 class="supportTitle">LIVEVQA Team</h1>
       <br>
 
       <div id="logoContainer">
         <img src="img/logos/HUST.png" alt="School 1" class="schoolLogo">
-        <img src="img/logos/Lehigh-University-logo.png" alt="School 2" class="schoolLogo">
-        <img src="img/logos/ND.png" alt="School 3" class="schoolLogo">
+        <img src="img/logos/UW.png" alt="School 2" class="schoolLogo">
+        <img src="img/logos/ZJU.png" alt="School 3" class="schoolLogo">
         <!-- <img src="img/logos/ND.png" alt="School 3" class="schoolLogo"> -->
-        <img src="img/logos/Microsoft.png" alt="School 4" class="schoolLogo">
+        <img src="img/logos/uic.png" alt="School 4" class="schoolLogo">
 
       </div>
 
