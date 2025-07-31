@@ -381,6 +381,264 @@
       </div>
   </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Benchmark Display</h2>
+    <div class="columns is-multiline is-centered">
+      <!-- Example 1 -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image" style="width: 320px; height: 240px; margin: auto;">
+              <img src="img/eg1.png" alt="Example Image 1" style="width: 100%; height: 100%; object-fit: cover;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">Example 1: News</p>
+                <p class="subtitle is-6">Source: CNN Sport</p>
+              </div>
+            </div>
+            <div class="content" style="margin-bottom: 1.2em;">
+              <strong>Level 1 Question:</strong>
+              <p>Based on the provided image, what is the specific location where this celebration is taking place?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. Augusta National Golf Club</li>
+                <li>B. Pebble Beach Golf Links</li>
+                <li>C. St Andrews Links</li>
+                <li>D. Torrey Pines Golf Course</li>
+                <li>E. Pinehurst No. 2</li>
+              </ul>
+              <strong>Ground Truth:</strong> A <em>(Augusta National Golf Club)</em>
+            </div>
+            <div class="content">
+              <strong>Level 2 Question:</strong>
+              <p>What is the reason the camera operator visible in the green tower above the crowd was able to capture the critical moment shown in the image?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. replay producer signaled to hold the shot</li>
+                <li>B. technical director delayed switching as ordered</li>
+                <li>C. director anticipated the shot outcome</li>
+                <li>D. head coach instructed to stay on main feed</li>
+              </ul>
+              <strong>Ground Truth:</strong> B <em>(technical director delayed switching as ordered)</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Example 2 -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image" style="width: 320px; height: 240px; margin: auto;">
+              <img src="img/eg2.png" alt="Example Image 2" style="width: 100%; height: 100%; object-fit: cover;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">Example 2: News</p>
+                <p class="subtitle is-6">Source: BBC</p>
+              </div>
+            </div>
+            <div class="content" style="margin-bottom: 1.2em;">
+              <strong>Level 1 Question:</strong>
+              <p>Based on the provided image, what is the specific location shown?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. Trafalgar Square</li>
+                <li>B. Hyde Park Corner</li>
+                <li>C. Parliament Square</li>
+                <li>D. Leicester Square</li>
+                <li>E. Piccadilly Circus</li>
+              </ul>
+              <strong>Ground Truth:</strong> C <em>(Parliament Square)</em>
+            </div>
+            <div class="content">
+              <strong>Level 2 Question:</strong>
+              <p>Why did the Home Secretary announce the extension of criminal protection to the monument prominently shown in the image?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. public demand for more statues</li>
+                <li>B. banner slogan matching protest motto</li>
+                <li>C. country celebrating VE Day</li>
+                <li>D. Parliament Square redevelopment approval</li>
+              </ul>
+              <strong>Ground Truth:</strong> C <em>(country celebrating VE Day)</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Example 3 -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image" style="width: 320px; height: 240px; margin: auto;">
+              <img src="img/eg3.png" alt="Example Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">Example 3: Video</p>
+                <p class="subtitle is-6">Source: YouTube</p>
+              </div>
+            </div>
+            <div class="content" style="margin-bottom: 1.2em;">
+              <strong>Level 1 Question:</strong>
+              <p>Based on the provided image, what event is taking place?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. Mumbai Tech Startup Expo 2024</li>
+                <li>B. MasterSoft Hosts Higher Education Leaders Conclave</li>
+                <li>C. Maharashtra Digital Learning Conference</li>
+                <li>D. National Policy on Education Review Summit</li>
+                <li>E. Nagpur Academic Technology Symposium</li>
+              </ul>
+              <strong>Ground Truth:</strong> B <em>(MasterSoft Hosts Higher Education Leaders Conclave)</em>
+            </div>
+            <div class="content">
+              <strong>Level 2 Question:</strong>
+              <p>How many years was the association mentioned by the principal who took over in 2009 before adopting the solution described by the man at the blue podium?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. 2 years</li>
+                <li>B. 3 years</li>
+                <li>C. 14 years</li>
+                <li>D. 4 years</li>
+              </ul>
+              <strong>Ground Truth:</strong> A <em>(2 years)</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Example 4 (modified) -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image" style="width: 320px; height: 240px; margin: auto;">
+              <img src="img/eg4.png" alt="Example Image 4" style="width: 100%; height: 100%; object-fit: cover;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">Example 4: Video</p>
+                <p class="subtitle is-6">Source: YouTube</p>
+              </div>
+            </div>
+            <div class="content" style="margin-bottom: 1.2em;">
+              <strong>Level 1 Question:</strong>
+              <p>Based on the provided image, what event is taking place?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. Venice Film Festival</li>
+                <li>B. Cannes Film Festival</li>
+                <li>C. Sundance Film Festival</li>
+                <li>D. Berlin International Film Festival</li>
+                <li>E. Toronto International Film Festival</li>
+              </ul>
+              <strong>Ground Truth:</strong> A <em>(Venice Film Festival)</em>
+            </div>
+            <div class="content">
+              <strong>Level 2 Question:</strong>
+              <p>What is the name of the event at which the audience shown in the image is present?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. Academy Awards Ceremony</li>
+                <li>B. Venice Film Festival</li>
+                <li>C. Cannes Film Festival</li>
+                <li>D. Berlin International Film Festival</li>
+              </ul>
+              <strong>Ground Truth:</strong> B <em>(Venice Film Festival)</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 5 (modified) -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image" style="width: 320px; height: 240px; margin: auto;">
+              <img src="img/eg5.png" alt="Example Image 5" style="width: 100%; height: 100%; object-fit: cover;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">Example 5: Academic Paper</p>
+                <p class="subtitle is-6">Source: Arxiv</p>
+              </div>
+            </div>
+            <div class="content" style="margin-bottom: 1.2em;">
+              <strong>Level 1 Question:</strong>
+              <p>Who is the primary author of the paper shown here?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. R. J. Smethurst</li>
+                <li>B. Hugh Dickinson</li>
+                <li>C. L. F. Fortson</li>
+                <li>D. Tobias Géron</li>
+                <li>E. Izzy L. Garland</li>
+              </ul>
+              <strong>Ground Truth:</strong> D <em>(Tobias Géron)</em>
+            </div>
+            <div class="content">
+              <strong>Level 2 Question:</strong>
+              <p>In this paper, for the sample of 6,640 galaxies that remained after the deduplication process, and based on the described classification scheme (where a galaxy is unbarred if p_strong_bar + p_weak_bar &lt; 0.5), how many galaxies were ultimately classified as unbarred?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. 311</li>
+                <li>B. 161</li>
+                <li>C. 6640</li>
+                <li>D. 6479</li>
+                <li>E. 398</li>
+              </ul>
+              <strong>Ground Truth:</strong> D <em>(6479)</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 6 (modified) -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image" style="width: 320px; height: 240px; margin: auto;">
+              <img src="img/eg6.png" alt="Example Image 6" style="width: 100%; height: 100%; object-fit: cover;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">Example 6: Academic Paper</p>
+                <p class="subtitle is-6">Source: Arxiv</p>
+              </div>
+            </div>
+            <div class="content" style="margin-bottom: 1.2em;">
+              <strong>Level 1 Question:</strong>
+              <p>Who conducted the research presented in this image?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. Yupeng Zhang</li>
+                <li>B. Mridul Sharma</li>
+                <li>C. Prajwal Thapa</li>
+                <li>D. Jinu Nyachhyon</li>
+                <li>E. Yagya Raj Pandeya</li>
+              </ul>
+              <strong>Ground Truth:</strong> C <em>(Prajwal Thapa)</em>
+            </div>
+            <div class="content">
+              <strong>Level 2 Question:</strong>
+              <p>In this paper, what is the precise count of distinct, pre-trained architectural frameworks that the researchers explicitly selected, then uniformly adapted at their terminal processing stage for the 60-class herb identification problem, and subsequently benchmarked against one another?</p>
+              <ul style="margin-bottom: 0.5em;">
+                <li>A. 1</li>
+                <li>B. 5</li>
+                <li>C. 6</li>
+                <li>D. 60</li>
+                <li>E. 121</li>
+              </ul>
+              <strong>Ground Truth:</strong> C <em>(6)</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">LIVEVQA Dataset Statistics</h2>
