@@ -550,10 +550,9 @@
   <section>
     <div class="container is-max-desktop">
 
-      <h2 class="title is-3">Benchmark Results for LIVEVQA</h2>
+      <h2 class="title is-3">Benchmark Results for Double-Bench</h2>
       <md-block>
-        We conducted a comprehensive benchmark of 17 state-of-the-art Multimodal Large Language Models (MLLMs) to evaluate their capabilities in seeking and updating live visual knowledge. The evaluation was performed on the LIVEVQA dataset, which includes content from recent news articles, YouTube videos, and academic papers. Performance was measured for Level 1 (visual entity recognition) and Level 2 (deeper visual knowledge reasoning) questions, with and without various search augmentation methods.
-        Key findings indicate that current MLLMs struggle significantly with visual knowledge beyond their training cutoff, but performance is drastically improved with the use of multimodal search tools.
+        Our comprehensive evaluation across 9 state-of-the-art embedding models, 4 MLLMs, and 4 document RAG frameworks reveals critical insights into the current state of document RAG systems. We systematically assessed performance across multiple dimensions including query complexity (single-hop vs. multi-hop), linguistic diversity (6 languages), document types (PDFs, scanned documents, slides, HTML), and content modalities (text, tables, figures). Most notably, we discovered a pervasive "overconfidence dilemma" where advanced RAG frameworks indiscriminately attempt to answer queries regardless of evidence quality, trading trustworthiness for coverage, and identified that retrieval accuracy—rather than generation capability—remains the primary bottleneck limiting overall system performance. 
       </md-block>
     </div>
     <div class="cover" id="contentCover">
